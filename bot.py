@@ -10,7 +10,7 @@ import json
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 # === НАЛАШТУВАННЯ ===
-TELEGRAM_TOKEN = os.environ.get('7871463230:AAEpbg5Porx6SuBHv538JQmHmEJxboc2A6Q', 'ТВІЙ_ТОКЕН_ТУТ')
+TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN', '7871463230:AAEpbg5Porx6SuBHv538JQmHmEJxboc2A6Q')
 GOOGLE_SHEET_NAME = "Реєстрація на ІЧУ 2025"
 
 # Стани для реєстрації
