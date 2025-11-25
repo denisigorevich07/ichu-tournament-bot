@@ -10,8 +10,13 @@ import json
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 # === НАЛАШТУВАННЯ ===
-TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN', '7871463230:AAEpbg5Porx6SuBHv538JQmHmEJxboc2A6Q')
+TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN')  # ТОКЕН ТІЛЬКИ З РЕНДЕР
 GOOGLE_SHEET_NAME = "Реєстрація на ІЧУ 2025"
+
+if not TELEGRAM_TOKEN:
+    print("❌ ПОМИЛКА: TELEGRAM_TOKEN не знайдено!")
+    print("ℹ️  Переконайся, що додав TELEGRAM_TOKEN у Environment Variables на Render")
+    exit(1)
 
 # Стани для реєстрації
 NICKNAME, CLAN, CAN_CREATE = range(3)
